@@ -1,0 +1,51 @@
+@import 'common';
+
+.mat-icon {
+
+  &.roof-top {
+    height: inherit;
+    width : inherit;
+    margin: 0;
+  }
+
+  &.roadmap {
+    height       : 100%;
+    margin-bottom: rem-calc(28);
+    width        : 100%;
+  }
+
+}
+
+.skill-list-container {
+  margin-top: rem-calc(-6);
+}
+
+.cell {
+  &.one {
+    background-color: $color-year1;
+    border          : solid 2px $color-year1-border;
+    border-top      : none;
+    padding-bottom  : rem-calc(14);
+  }
+
+  &.two {
+    background-color: $color-year2;
+    border          : solid 2px $color-year2-border;
+    border-top      : none;
+    padding-bottom  : rem-calc(14);
+  }
+
+  &.three {
+    background-color: $color-year3;
+    border          : solid 2px $color-year3-border;
+    border-top      : none;
+    padding-bottom  : rem-calc(14);
+  }
+
+  &.four {
+    background-color: $color-year4;
+    border          : solid 2px $color-year4-border;
+    border-top      : none;
+    padding-bottom  : rem-calc(14);
+  }
+}

@@ -1,0 +1,119 @@
+<mat-card class="{{isOccupationCardVisible ? 'viewport-occupation' : 'viewport-occupation-roadmap'}}">
+  <mat-card-content>
+
+
+    <section class="grid-y align-bottom card-wrapper">
+
+      <!-- IMAGE -->
+      <div class="cell align-self-top">
+        <!-- IMAGE -->
+        <div class="occupation-image-container"
+             [style.background]="'url(' + imageUrl + ')'">
+
+          <!-- THE OVERLAY TO MAKE THE IMAGE DARKER -->
+          <div class="image-overlay"></div>
+
+          <!-- TITLE -->
+          <div class="title-container">
+            <div class="occupation-title"
+                 [matTooltip]="occupation.title">
+              {{occupation.title}}</div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- SALARY/GROWTH -->
+      <div class="cell align-self-bottom mgn"
+           *ngIf="isOccupationCardVisible">
+
+        <!-- SALARY AND GROWTH -->
+        <section class="grid-x grid-padding-x align-center-middle text-center">
+
+          <div class="cell auto vertical-line">
+            <b>{{ salary | salarySuffix }} /yr</b>
+            <div> median salary</div>
+          </div>
+          <div class="cell auto">
+            <b> {{occupation.projectedGrowthRate}}</b>
+            <div>growth</div>
+          </div>
+
+        </section>
+
+
+      </div>
+
+
+      <!-- SALARY/GROWTH -->
+      <div class="cell align-bottom"
+           *ngIf="!isOccupationCardVisible">
+
+        <!-- SALARY AND GROWTH -->
+        <section class="grid-y align-self-bottom content-style ">
+
+          <div class="cell align-self-bottom">
+            <span class="text-font">{{ salary | salarySuffix }}</span>
+            <div>/ year</div>
+          </div>
+          <div class="cell align-self-bottom">
+            <span class="text-font"> {{occupation.projectedGrowthRate}}</span>
+            <div>growth</div>
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- SALARY/GROWTH -->
+      <div class="cell align-self-left"
+           *ngIf="!isOccupationCardVisible
+           ">
+
+        <!-- SALARY AND GROWTH -->
+        <section class="grid-y  align-left">
+
+          <div class="cell top ">
+            <b>TOP SKILLS</b>
+
+          </div>
+          <div class="cell">
+
+            <section class="grid-x skills-container grid-margin-x">
+
+              <!-- ESSENTIAL SKILLS -->
+              <div class="cell auto">
+
+                <gmu-skill-list [title]="'Essential'"
+                                [subTitle]="' '"
+                                [topX]="3"
+                                [skillList]="essentialSkillList"
+                                [isOccupationCardVisible]="isOccupationCardVisible"></gmu-skill-list>
+
+              </div>
+
+              <!-- TECHNICAL SKILLS -->
+              <div class="cell auto">
+
+                <gmu-skill-list [title]="'Technical'"
+                                [subTitle]="' '"
+                                [topX]="3"
+                                [skillList]="technicalSkillList"
+                                [isOccupationCardVisible]="isOccupationCardVisible"></gmu-skill-list>
+
+              </div>
+
+            </section>
+          </div>
+
+
+        </section>
+
+      </div>
+
+    </section>
+
+
+  </mat-card-content>
+</mat-card>

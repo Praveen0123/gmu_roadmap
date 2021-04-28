@@ -1,0 +1,55 @@
+query pathwayDetailsById($id: ID!)
+{
+  pathwayById(id:$id)
+  {
+    id
+    areaOfStudy
+    code
+    description
+    bachelorDegree
+    {
+      ...degreeFieldsPathwayDetails
+    }
+    associateDegree
+    {
+      ...degreeFieldsPathwayDetails
+    }
+    skills
+    {
+      ...skillsFields
+    }
+    occupationList
+    {
+      ...occupationDetailsFragment
+    }
+  }
+}
+
+fragment degreeFieldsPathwayDetails on Degree
+{
+  id
+  name
+  type
+  school
+  cipCode
+  courses
+  {
+    id
+    name
+    code
+    credits
+    skillList
+    {
+      ...skillsFields
+    }
+  }
+}
+
+fragment skillsFields on Skill
+{
+  id
+  label
+  type
+  demandLevel
+  description
+}

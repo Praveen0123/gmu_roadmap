@@ -1,0 +1,9 @@
+<video
+  #videoPlay
+  (ended)="videoHasEnd()"
+  controls
+  preload="none"
+  [poster]="posterUrl"
+>
+  <source [src]="videoUrl" type="video/mp4" />
+</video>

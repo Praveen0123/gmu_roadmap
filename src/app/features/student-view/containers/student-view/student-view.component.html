@@ -1,0 +1,22 @@
+<ng-container *ngIf="{skillRoadmap:skillRoadmap$ |async
+                       } as dataOwner">
+
+
+
+  <section class="grid-x ">
+    <div class="cell medium-2 desktop-body-margin-remove  ">
+      <gmu-student-view-advance [skillRoadmap]="dataOwner.skillRoadmap"></gmu-student-view-advance>
+    </div>
+
+    <div class="cell  medium-10 desktop-body-margin-remove2 ">
+      <gmu-student-view-skills [navLinks]="navLinks"></gmu-student-view-skills>
+      <router-outlet></router-outlet>
+    </div>
+
+  </section>
+
+
+
+
+
+</ng-container>

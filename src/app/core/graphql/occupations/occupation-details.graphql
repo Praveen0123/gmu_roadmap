@@ -1,0 +1,83 @@
+query occupationDetailsByOnetCode($onetCode: ID!) 
+{
+  occupationByOnetCode(onetCode: $onetCode) 
+  {
+    ...occupationDetailsFragment
+    
+    skills 
+    {
+      ...skillsFields
+    }
+    
+    hotspotList 
+    {
+      ...hotspotFragment
+    }
+  }
+}
+
+query occupationDetailsById($id: ID!) 
+{
+  occupationById(id: $id) 
+  {
+    ...occupationDetailsFragment
+    
+    skills 
+    {
+      ...skillsFields
+    }
+    
+    hotspotList 
+    {
+      ...hotspotFragment
+    }
+  }
+}
+
+
+fragment occupationDetailsFragment on Occupation 
+{
+  vpOccupationId
+  onetCode
+  title
+  description
+  typicalEducationLevelGroupId
+  typicalLevelOfEducation
+  typicalWorkExperienceGroupId
+  typicalWorkExperience
+  projectedGrowthRate
+  projectedJobOpenings2018To2028
+  imageName
+  videoId
+  preferredSalary
+  {
+    minimumSalaryPerYear
+    minimumSalaryPerHour
+    medianSalaryPerYear
+    medianSalaryPerHour
+    maximumSalaryPerYear
+    maximumSalaryPerHour
+    salaryPrecisionType
+  }  
+}
+
+fragment hotspotFragment on Hotspot
+{
+  marketArea
+  countyFIPSCode
+  countyName
+  stateAbbreviation
+  latitude
+  longitude
+  demandLevel
+  preferredSalary
+  {
+    minimumSalaryPerYear
+    minimumSalaryPerHour
+    medianSalaryPerYear
+    medianSalaryPerHour
+    maximumSalaryPerYear
+    maximumSalaryPerHour
+    salaryPrecisionType
+  }  
+}

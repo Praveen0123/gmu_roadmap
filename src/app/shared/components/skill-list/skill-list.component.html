@@ -1,0 +1,51 @@
+<section class="{{gridClass}}"
+         *ngIf="isOccupationCardVisible">
+
+   <div class="cell"
+        *ngIf="title && subTitle">
+      <h3>
+         <span class="title">{{title}}</span>
+         <span class="subTitle">{{subTitle}}</span>
+      </h3>
+   </div>
+
+   <div class="cell  {{cellClass}}"
+        *ngFor="let skill of skillListToDisplay">
+
+      <a mat-stroked-button
+         *ngIf="!displaySkillsAsLinks"
+         (click)="onClickSkill(skill)">{{skill.label}}</a>
+
+      <a mat-button
+         class="link"
+         *ngIf="displaySkillsAsLinks"
+         (click)="onClickSkill(skill)">{{skill.label}}</a>
+   </div>
+
+
+</section>
+<section class=""
+         *ngIf="!isOccupationCardVisible">
+
+   <div class="cell"
+        *ngIf="title && subTitle">
+      <h3>
+         <span class="title">{{title}}</span>
+         <span class="subTitle">{{subTitle}}</span>
+      </h3>
+   </div>
+
+
+
+
+   <div class="cell   "
+        *ngFor="let skill of skillListToDisplay">
+
+      <a mat-flat-button
+         *ngIf="!displaySkillsAsLinks"> <small>{{skill.label}}</small></a>
+
+      <a mat-flat-button
+         *ngIf="displaySkillsAsLinks"><small>{{skill.label}}</small></a>
+   </div>
+
+</section>

@@ -1,0 +1,109 @@
+@import 'common';
+ .arrow-down {
+  width                     : rem-calc(15);
+  height                    : rem-calc(15);
+  border-top                : rem-calc(0) solid $gray-400;
+  border-right              : rem-calc(2) solid $gray-400;
+  border-bottom             : rem-calc(2)solid $gray-400;
+  border-left               : rem-calc(0)solid $gray-400;
+  position                  : absolute ;
+  bottom                    : rem-calc(-10);
+  left                      : 59%;
+  transform                 : rotate(45deg);
+  background                : $white;
+  
+}
+
+.arrow{
+   position                 : relative ;
+   z-index                  : 1 ;    
+   margin-top               : rem-calc(-24);
+   border-bottom            : solid rem-calc(2) $gray-400;
+   
+}
+
+
+.line{
+  position                  : relative ;
+    margin                  :  rem-calc(15) rem-calc(70) rem-calc(0) rem-calc(70) ;
+   border-bottom            : solid rem-calc(3) $black ;
+    border-right            :solid  rem-calc(3)$black !important;
+  border-left               : solid  rem-calc(3) $black !important; 
+
+  border-width              :rem-calc(2) rem-calc(0) rem-calc(2) rem-calc(2);
+  height                    :  rem-calc(15) ;
+
+    width                   : 85%;
+}
+
+.southStyle{
+  
+    margin-top              : rem-calc(14);
+
+}
+
+
+.mgn{
+  margin-bottom: 25px;
+}
+
+
+
+.active  {
+  position: relative;
+  background-color: $black !important;
+  color: $white;
+   border: 1px solid $black;
+}
+.active:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 99%;
+  margin-left: -50px;
+  width: 0;
+  height: 0;
+  border-top: solid 8px $black  !important;
+  border-left: solid 8px transparent !important;
+  border-right: solid 8px transparent !important;
+}
+.inactive{
+   border: 2px solid $black;
+   background-color: $white;
+  
+}
+
+.mat-button-toggle-checked {
+ 
+   background-color: $black;
+   color: $white; 
+  font-weight: normal;
+}
+
+
+
+
+mat-button-toggle {
+    border: 1px solid $black;
+    // border-radius: 3px  ;
+    font-weight: normal;
+    background-color: $white; 
+    color: $black;
+}
+
+
+
+
+
+.mat-button-toggle-standalone, .mat-button-toggle-group{
+  overflow: unset;
+}
+
+.font-size{
+ font-weight: 402;
+    font-size: 16px;
+    margin-top: 14px;
+}
+.buttonToggle{
+  margin-left: 10%;
+}

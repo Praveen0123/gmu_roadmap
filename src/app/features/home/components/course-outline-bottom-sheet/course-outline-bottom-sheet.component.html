@@ -1,0 +1,59 @@
+<section class="grid-y">
+
+  <!-- HEADER: COURSE OUTLINE -->
+  <div class="cell">
+    <gmu-section-header [title]="'Course Outline'"></gmu-section-header>
+  </div>
+
+
+  <!-- AREA OF STUDY NAME & CLOSE -->
+  <div class="cell">
+
+    <section class="grid-x grid-padding-x grid-margin-x">
+
+      <!-- Arera Of Study Name -->
+      <div class="cell auto">
+        <h3> {{data.areaOfStudy}} </h3>
+      </div>
+
+      <!-- CLOSE THE BOTTOM SHEET -->
+      <div class="cell shrink"
+           (click)="closeBottomSheet($event)">
+
+        <mat-icon aria-hidden="false"
+                  aria-label="clear"
+                  class="clear">clear</mat-icon>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- COURSE OUUTLINE -->
+  <div class="cell">
+
+    <section class="grid-x">
+
+      <!-- NOVA DEGREE COURSES -->
+      <div class="cell xsmall-12 large-6 medium-6">
+
+        <gmu-course-outline [title]="'Nova Courses'"
+                            [degreeModel]="data.associateDegree"
+                            class="nova-courses"></gmu-course-outline>
+
+      </div>
+
+      <!-- MASON DEGREE COURSES -->
+      <div class="cell xsmall-12 large-6 medium-6">
+
+        <gmu-course-outline [title]="'Mason Courses'"
+                            [degreeModel]="data.bachelorDegree"></gmu-course-outline>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>

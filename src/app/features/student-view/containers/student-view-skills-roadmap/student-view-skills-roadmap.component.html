@@ -1,0 +1,110 @@
+<section class="grid-y">
+  <div class="arrow">
+    <div class="arrow-down "></div>
+  </div>
+</section>
+
+<div class="grid-y  text-center grid-padding-y grid-margin-y">
+
+  <!-- <div class="cell ">
+    <button mat-stroked-button
+            (click)="toggleHighlight(1);"
+            [ngClass]="{'active': highlightedDiv === 1,'inactive' :highlightedDiv === 0}">Skills View</button>
+    <button mat-stroked-button
+            (click)="toggleHighlight2(1);"
+            [ngClass]="{'active': highlightedDiv2 === 1,'inactive' :highlightedDiv2 === 0}"> Course View</button>
+  </div> -->
+  <div class="cell">
+
+    <!-- 
+    <mat-button-toggle-group name="fontStyle"
+                             aria-label="Font Style"
+                             #group="matButtonToggleGroup"
+                             [value]="view">
+      <mat-button-toggle value="Skills View"
+                         [ngClass]="{'active':group.value==='Skills View'}">Skills View</mat-button-toggle>
+      <mat-button-toggle value="Course View"
+                         [ngClass]="{'active':group.value==='Course View'}">Course View</mat-button-toggle>
+
+    </mat-button-toggle-group> -->
+
+
+    <section class="grid-x  ">
+
+      <div class="cell buttonToggle">
+        <mat-button-toggle-group #group="matButtonToggleGroup"
+                                 [value]="selectedSkillType"
+                                 (change)="changeSkillType(group.value)">
+          <mat-button-toggle [value]="'Skills View'"
+                             [ngClass]="{'active': selectedSkillType === 'Skills View'}">Skills View</mat-button-toggle>
+          <mat-button-toggle [value]="'Course View'"
+                             [ngClass]="{'active': selectedSkillType === 'Course View'}">Course View</mat-button-toggle>
+
+        </mat-button-toggle-group>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+
+<ng-container *ngIf="{
+                        occupationProfileModel: occupationProfileModel$ | async,
+                        areaOfStudyList:areaOfStudyList$ | async,
+                        pathway:pathway$ | async,
+                        skillRoadmap:skillRoadmap$ |async
+                       
+                      } as dataOwner">
+
+  <section class=" grid-x  grid-padding-x  grid-margin-x">
+    <div class="cell">
+
+      <p *ngIf="selectedSkillType == 'Skills View'"
+         class="font-size"> Below are the <b>TOP SKILLS</b> in demand for this occupation</p>
+      <p *ngIf="selectedSkillType == 'Skills View'"
+         class="font-size"> You will gain these skills and more in your ADVANCE degree coursework.</p>
+      <p *ngIf="selectedSkillType == 'Course View'"
+         class="font-size">Below are is an example of the <b>COURSES</b> you will take in this Pathway.</p>
+
+    </div>
+
+    <div class="cell align-self-middle ">
+
+      <gmu-roadmap-medium [occupationProfileDetails]="dataOwner.occupationProfileModel"
+                          [isSkillRoadmapVisible]="false"></gmu-roadmap-medium>
+
+    </div>
+
+  </section>
+
+  <section class="grid-x grid-margin-x text-center align-stretch">
+    <div class="cell line ">
+
+      <span class="material-icons large southStyle">
+        south
+      </span>
+    </div>
+  </section>
+
+
+
+
+  <!-- OCCUPATION CARDS BY AREA OF STUDY -->
+  <section class="grid-x grid-margin-x text-center align-stretch ">
+    <div class="cell ">
+
+      <!-- <gmu-skills-roadmap-medium [areaOfStudyList]="dataOwner.areaOfStudyList"
+                                 [skillRoadmap]="dataOwner.skillRoadmap"
+                                 [pathway]="dataOwner.pathway"
+                                 (onAreaOfStudyClick)="onAreaOfStudyClick($event)"
+                                 (onOccupationClick)="onOccupationClick($event)"></gmu-skills-roadmap-medium> -->
+
+
+      <gmu-student-view-skill-roadmap-shared [areaOfStudyList]="dataOwner.areaOfStudyList"
+                                             [skillRoadmap]="dataOwner.skillRoadmap"
+                                             [pathway]="dataOwner.pathway"
+                                             (onAreaOfStudyClick)="onAreaOfStudyClick($event)"
+                                             (onOccupationClick)="onOccupationClick($event)"></gmu-student-view-skill-roadmap-shared>
+    </div>
+  </section>
+</ng-container>

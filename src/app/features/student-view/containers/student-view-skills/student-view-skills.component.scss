@@ -1,0 +1,35 @@
+@import "common";
+@import "~@angular/material/theming";
+
+.router-outlet-wrapper {
+  @include breakpoint(medium up) {
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+    padding: rem-calc(10);
+  }
+}
+
+
+.tabHeading{
+   color                     : $color-header;
+   font-size                 : rem-calc(25);
+   font-weight               : bold;
+    
+}
+
+.tabSubHeading{
+ 
+   color                     : $black;
+   font-size                 : rem-calc(20);
+   font-weight               : bold;
+   margin-top                : rem-calc(-25);
+}
+
+.tabSubHeading2{
+   color                     : $black;
+   font-size                 : rem-calc(20);
+
+}
+
+
+

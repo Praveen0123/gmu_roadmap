@@ -1,0 +1,147 @@
+<section class="grid-y router-outlet-wrapper grid-padding-y  "
+         *ngFor="let skills of skillRoadmap ">
+  <div class="cell">
+    <div class="grid-x">
+      <div class="cell  medium-2">
+
+        <mat-icon class="gradIcon"
+                  svgIcon="Grad_Icon_AdminView"></mat-icon>
+
+      </div>
+
+      <div class="cell  auto align-self-bottom">
+        <span class="heading">ADVANCE Student</span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> STUDENT NAME </b>
+      </div>
+      <div class="cell ">
+
+        <span>{{skills.studentName}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b class=""> AREA OF STUDY </b>
+      </div>
+      <div class="cell ">
+
+        <span>{{skills.areaOfStudy}} </span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> NOVA Degree </b>
+      </div>
+      <div class="cell ">
+
+        <span>{{skills.novaDegree}} </span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> MASON Degree </b>
+      </div>
+      <div class="cell ">
+
+        <span> {{skills.masonDegree}} </span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> SUCCESS COACH </b>
+      </div>
+      <div class="cell ">
+
+        <span class=""> {{skills.successCoachName}} </span>
+
+      </div>
+      <div class="cell">
+        <span class=""> {{skills.successCoachEmail}} </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b class=""> CHORT YEAR</b>
+      </div>
+      <div class="cell ">
+
+        <span> {{skills.chortYear}} </span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> ADDRESS </b>
+      </div>
+      <div class="cell ">
+        <span> {{skills.areaOfStudy}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> STATUS </b>
+      </div>
+      <div class="cell ">
+        <span> {{skills.address}} </span>
+      </div>
+    </div>
+  </div>
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> GPA </b>
+      </div>
+      <div class="cell ">
+        <span> {{skills.GPA}}</span>
+      </div>
+    </div>
+  </div> -->
+  <div class="cell">
+    <div class="grid-y">
+      <div class="cell ">
+        <b> EXPECTED GRADUATION DATE </b>
+      </div>
+      <div class="cell ">
+        <span>{{skills.expectedGradutionDate}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cell text-center">
+
+    <button mat-raised-button
+            class="course-button">
+
+      <span class=""><i class="fas fa-file-pdf"></i></span> VIEW COURSE PDF
+
+    </button>
+
+  </div>
+
+</section>

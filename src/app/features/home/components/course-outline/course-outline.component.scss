@@ -1,0 +1,32 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+.cell
+{
+  &.course-header 
+  {
+    background-color: $black;
+    color           : $white;
+  }
+
+  &.course-item
+  {
+    border-bottom: solid rem-calc(1) $color-primary;
+    height: rem-calc(60);
+
+    &.odd 
+    {
+      background-color: $color6;
+    }
+  }
+
+  &.course-footer 
+  {
+    color      : $black;
+    font-size  : rem-calc(14);
+    font-weight: bold;
+  }
+}

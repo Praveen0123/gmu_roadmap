@@ -1,0 +1,36 @@
+@import 'common';
+
+:host {
+  display: block;
+}
+
+
+div {
+  &.first-curve {
+    border-bottom: rem-calc(20) solid $color2;
+    height       : rem-calc(40)
+  }
+
+  &.second-curve {
+    border-bottom: rem-calc(20) solid transparent;
+    height       : rem-calc(20);
+    margin-top   : rem-calc(20);
+    background   : transparent linear-gradient(270deg, $color3 0%, $color2 100%);
+  }
+
+  &.third-curve {
+    border-bottom: rem-calc(60) solid $color3;
+  }
+
+  &.fourth-curve {
+    border-bottom: rem-calc(20) solid transparent;
+    height       : rem-calc(20);
+    margin-top   : rem-calc(20);
+    background   : transparent linear-gradient(90deg, $color3 0%, $color4 100%);
+  }
+
+  &.fifth-curve {
+    border-bottom: rem-calc(20) solid $color4;
+    height       : rem-calc(40);
+  }
+}

@@ -1,0 +1,50 @@
+<section class="grid-y grid-margin-y">
+
+  <!-- HEADER: What They Do Header -->
+  <div class="cell">
+    <gmu-section-header [title]="'What They Do ...'"></gmu-section-header>
+  </div>
+
+
+  <!-- DESCRIPTION & VIDEO -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x grid-margin-y">
+
+      <!-- DESCRIPTION -->
+      <div class="cell medium-auto">
+        <span class="message__label message__label--large">{{ occupationProfileDetails.description }}</span>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="cell medium-auto">
+        <gmu-video *ngIf="occupationProfileDetails.videoId"
+                   [videoUrl]="videoUrl"
+                   [posterUrl]="posterUrl"></gmu-video>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- SALARIES & STATS -->
+  <div class="cell">
+
+    <section class="grid-x grid-margin-x salaries-stats-container">
+
+      <!-- SALARIES -->
+      <div class="cell medium-auto">
+        <gmu-occupation-salary [occupationProfileDetails]="occupationProfileDetails"></gmu-occupation-salary>
+      </div>
+
+      <!-- STATS -->
+      <div class="cell medium-auto">
+        <gmu-occupation-stats [occupationProfileDetails]="occupationProfileDetails"></gmu-occupation-stats>
+      </div>
+
+    </section>
+
+  </div>
+
+</section>

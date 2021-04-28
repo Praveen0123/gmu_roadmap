@@ -1,0 +1,55 @@
+<!-- Average Salary Display Content -->
+<section class="grid-x grid-padding-x grid-padding-y">
+  <div class="cell auto">
+    <span class="bold">{{ mediumSalary | salarySuffix }}</span>
+    <p>Average Salary</p>
+  </div>
+
+  <!-- Toggle Button Change  -->
+  <div class="cell auto text-right">
+    <mat-button-toggle-group class="mat-button-style"
+                             #group="matButtonToggleGroup"
+                             [value]="selectedSalaryType"
+                             (change)="onSalaryTypeSelection(group.value)">
+      <mat-button-toggle [value]="availableSalaryTypes.Annual">{{availableSalaryTypes.Annual}}</mat-button-toggle>
+      <mat-button-toggle [value]="availableSalaryTypes.Hourly">{{availableSalaryTypes.Hourly}}</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</section>
+
+
+<!-- SALARY GRAPH -->
+<section class="grid-x grid-padding-x grid-padding-y">
+  <div class="cell auto">
+    <div class="first-curve"></div>
+  </div>
+  <div class="cell auto">
+    <div class="second-curve"></div>
+  </div>
+  <div class="cell auto">
+    <div class="third-curve"></div>
+  </div>
+  <div class="cell auto">
+    <div class="fourth-curve"></div>
+  </div>
+  <div class="cell auto">
+    <div class="fifth-curve"></div>
+  </div>
+</section>
+
+
+<!-- Salaries Display List -->
+<section class="grid-x grid-padding-x">
+  <div class="cell auto">
+    <span class="bold">{{ minimumSalary | salarySuffix }}</span>
+    <p> Min 10% </p>
+  </div>
+  <div class="cell auto text-center">
+    <span class="bold">{{ mediumSalary | salarySuffix }}</span>
+    <p> Median 50% </p>
+  </div>
+  <div class="cell auto text-right">
+    <span class="bold">{{ maximumSalary | salarySuffix }}</span>
+    <p> Max 90% </p>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+@import 'common';
+
+gmu-video {
+  max-width: 1280px;
+}
+
+.salaries-stats-container {
+  @include breakpoint(medium) {
+    border: solid 1px $color-primary;
+  }
+}

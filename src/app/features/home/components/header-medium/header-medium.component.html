@@ -1,0 +1,63 @@
+<section class="grid-y">
+  <!-- NOVA TOP HEADER IMAGE -->
+  <div class="cell header-image"></div>
+
+  <!-- Partnership -->
+  <div class="cell lower-header-section">
+    <section class="desktop-body-margin">
+      <section class="grid-x align-justify">
+        <!-- PARTNERSHIP -->
+        <div class="cell auto advance-container">
+          <section class="grid-x align-bottom"
+                   style="height: 100%;">
+            <div class="cell shrink"><span class="advance">ADVANCE</span></div>
+            <div class="cell shrink">
+              <span class="partnership">a NOVA | MASON partnership.</span>
+            </div>
+          </section>
+
+          <svg class="triangle-svg"
+               preserveAspectRatio="none"
+               viewBox="0 0 60 100">
+            <polygon class="header-background"
+                     points="20,0 35,0 60,50 35,100 20,100"></polygon>
+            <polygon class="color-header"
+                     points="0,0 20,0 45,50 20,100 0,100"></polygon>
+          </svg>
+        </div>
+
+        <!-- PROGRAM ICONS -->
+        <div class="cell shrink text-center">
+          <section class="grid-x align-bottom">
+            <!--  NOVA_ICON -->
+            <div class="cell shrink">
+              <img class="icon-nova"
+                   [src]="novaIcon" />
+            </div>
+
+            <!--  PLUS -->
+            <div class="cell shrink align-self-middle">
+              <i class="fa fa-plus fa-2x plusStyle"
+                 aria-hidden="true"></i>
+            </div>
+
+            <!-- ICON_GMU -->
+            <div class="cell shrink">
+              <img class="icon-gmu"
+                   [src]="gmuIcon" />
+            </div>
+
+            <!-- SIGN-IN -->
+            <div class="cell shrink align-self-top text-center w-60-px">
+              <a (click)="goToStudentViewPage() ">
+                <mat-icon class="sign-in"
+                          [svgIcon]="'icon-login'"></mat-icon>
+                <h5>Sign In</h5>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </div>
+</section>

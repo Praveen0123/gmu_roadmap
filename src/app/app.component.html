@@ -1,0 +1,19 @@
+<ngx-spinner>
+  <p class="loading">Loading...</p>
+</ngx-spinner>
+
+<ng-container *ngIf="{ deviceCharacteristics: deviceCharacteristics$ | async } as dataOwner">
+
+  <!-- grid-container: OUTER CONTAINER FOR ZURB FOUNDAION'S XY GRID -->
+  <section class="grid-container md-grid-container">
+    <gmu-header-small *ngIf="dataOwner.deviceCharacteristics?.isLessThanMedium"></gmu-header-small>
+    <gmu-header-medium *ngIf="dataOwner.deviceCharacteristics?.isGreaterThanSmall"></gmu-header-medium>
+
+    <section class="page-container desktop-body-margin">
+      <router-outlet></router-outlet>
+    </section>
+  </section>
+
+  <gmu-footer [deviceCharacteristics]="dataOwner.deviceCharacteristics"></gmu-footer>
+
+</ng-container>

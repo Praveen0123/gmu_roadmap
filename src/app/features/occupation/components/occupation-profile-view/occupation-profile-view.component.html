@@ -1,0 +1,118 @@
+<section class="grid-y bgcolor">
+
+  <gmu-section-header [title]="'This Occupation'"
+                      [subTitle]="'aligns with these ADVANCE Pathways:'"></gmu-section-header>
+
+  <div class="cell show-for-medium">
+    <div class="grid-x grid-padding-x">
+      <div class="cell medium-11 text-right">
+        <div class="grid-x grid-padding-x">
+          <div class="cell medium-10">
+            <p> <b> Select a Pathway </b> to view more details </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cell">
+    <section class="grid-x">
+      <div class="cell medium-7 xsmall-12">
+
+        <div class="border bgcolor1">
+          <div class="arrow-down"></div>
+          <!-- OCCUPAION NAME -->
+          <div class="cell">
+            <h2 class="occupationHeading">
+              {{occupationProfileDetails.title}}
+            </h2>
+          </div>
+
+          <!-- OCCUPATION PROFILE -->
+          <div class="cell">
+
+            <section class="grid-x grid-padding-x align-self-bottom">
+
+              <!-- CHECK MARK -->
+              <div class="cell medium-3 xsmall-4 check-mark-container">
+
+                <section class="grid-x grid-padding-x">
+
+                  <div class="cell auto align-self-middle text-center">
+                    <mat-icon class="icon-check-mark"
+                              [svgIcon]="'icon-shadow-checkmark'"></mat-icon>
+                  </div>
+
+                </section>
+
+              </div>
+
+              <!-- Circle CheckMarks  -->
+              <div class="cell medium-1 xsmall-1 check-mark-container2">
+
+                <div class="grid-x align-right"
+                     *ngFor="let in of [0,1,2]">
+                  <div class="cell medium-6">
+
+                    <img class="icon-check-mark2"
+                         [src]="checkmarkCircle">
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- PROFILE DETAILS -->
+              <div class="cell auto align-self-middle">
+
+                <section class="grid-y ">
+                  <div class="cell grid-padding-y">
+                    <span class="messaging heading"> Area of Study : </span>
+                    <span class="messaging">Business and Hospitality Management </span>
+                    <!-- <span class="messaging"> {{occupationProfileDetails.areaOfStudy}} </span> -->
+                  </div>
+
+                  <div class="cell grid-padding-y">
+                    <span class="messaging heading"> MASON Degree : </span>
+                    <span class="messaging">B.S. Business - Financial Planning Concentration </span>
+                    <!-- <span class="messaging"> {{occupationProfileDetails.masonDegree}} </span> -->
+                  </div>
+
+                  <div class="cell grid-padding-y">
+                    <span class="messaging heading"> NOVA Degree : </span>
+                    <span class="messaging">A.S. Business Administration </span>
+                    <!-- <span class="messaging"> {{occupationProfileDetails.novaDegree}} </span> -->
+                  </div>
+                </section>
+
+              </div>
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+      <div class="cell medium-5 xsmall-12 small-screen">
+
+        <div class="cell">
+
+          <div class="grid-x grid-margin-y"
+               *ngFor="let pathway of pathwayDetails">
+            <div class="cell medium-6 xsmall-12 bgcolor1">
+              <div class="grid-x grid-padding-x pathways">
+                <div class="cell medium-1 xsmall-1 check-mark-container1 align-self-middle">
+                  <mat-icon class="icon-check-mark1"
+                            [svgIcon]="'icon-shadow-checkmark'"></mat-icon>
+                </div>
+                <div class="cell auto align-self-middle">
+                  <span class="messaging heading"> {{pathway.title}} </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </div>
+</section>

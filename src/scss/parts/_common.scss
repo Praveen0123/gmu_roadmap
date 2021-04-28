@@ -1,0 +1,45 @@
+.bold {
+  font-weight: bold;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.grid-padding-y-bottom {
+  >.cell {
+    padding-top   : 0;
+    padding-bottom: 0.875rem;
+  }
+}
+
+// style for bottom sheet
+.my-component-bottom-sheet {
+  min-height: 85vh !important;
+  min-height: 85vh !important;
+}
+
+.my-component-bottom-sheet1 {
+  min-height: 85vh !important;
+  padding   : rem-calc(0) !important;
+}
+
+.search-button {
+  color         : $white;
+  background    : $color-secondary;
+  border-radius : rem-calc(30);
+  width         : rem-calc(90);
+  height        : rem-calc(34);
+  letter-spacing: 1.12px;
+  padding       : 0 rem-calc(14);
+  font-size     : rem-calc(12);
+  font-weight   : 100;
+}

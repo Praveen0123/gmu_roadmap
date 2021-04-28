@@ -1,0 +1,70 @@
+<section class="grid-y">
+
+  <!-- HEADER: TOP SKILLS GAINED IN THIS MAJOR -->
+  <div class="cell">
+    <gmu-section-header [title]="'Skills'"
+                        [subTitle]="'needed for this occupation'"></gmu-section-header>
+  </div>
+
+
+  <!-- Top Skills Description -->
+  <div class="cell align-justify">
+    <p>{{topSkillsDescription}}</p>
+  </div>
+
+
+  <!-- ROADMAP -->
+  <div class="cell">
+
+    <mat-icon class="roadmap"
+              svgIcon="roadmap"></mat-icon>
+
+  </div>
+
+
+  <!-- YOU ARE QUALIFIED -->
+  <div class="cell">
+
+    <section class="grid-x grid-padding-x">
+
+      <div class="cell text-right">
+        <span class="message__label message__label--">You are now qualified for the occupation of</span>
+        <span class="message__label message__label--xxlarge">{{occupationProfileDetails.title}}</span>
+      </div>
+
+    </section>
+
+
+  </div>
+
+
+  <!-- Skills List -->
+  <!-- <div class="cell">
+
+    <section class="grid-x text-center">
+
+      <div class="cell auto">
+
+        <gmu-skill-list [title]="'Essential'"
+                        [subTitle]="'Skills'"
+                        [topX]="4"
+                        [skillList]="essentialSkillList"
+                        (onClickSkill)="openBottomSheet($event)"></gmu-skill-list>
+
+      </div>
+
+      <div class="cell auto">
+
+        <gmu-skill-list [title]="'Technical'"
+                        [subTitle]="'Skills'"
+                        [topX]="4"
+                        [skillList]="technicalSkillList"
+                        (onClickSkill)="openBottomSheet($event)"></gmu-skill-list>
+
+      </div>
+
+    </section>
+
+  </div> -->
+
+</section>

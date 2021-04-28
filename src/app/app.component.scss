@@ -1,0 +1,50 @@
+@import "common";
+@import "~@angular/material/theming";
+
+:host {
+  display: block;
+  height : 100%;
+
+  // border: solid 2px deeppink;
+
+  // @include breakpoint(small) {
+  //   border: solid 2px dodgerblue;
+  // }
+
+  // @include breakpoint(medium) {
+  //   border: solid 2px orange;
+  // }
+
+  // @include breakpoint(large) {
+  //   border: solid 2px limegreen;
+  // }
+
+  // @include breakpoint(xlarge) {
+  //   border: solid 2px purple;
+  // }
+
+}
+
+.page-container {
+  min-height    : 55vh;
+  padding-top   : rem-calc(23);
+  padding-bottom: rem-calc(40);
+}
+
+.md-grid-container {
+  @include breakpoint(medium) {
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+  }
+}
+
+.loading {
+  color      : white;
+  font-size  : rem-calc(20);
+  line-height: 1.5;
+  padding-top: 50px;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(28);
+  }
+}

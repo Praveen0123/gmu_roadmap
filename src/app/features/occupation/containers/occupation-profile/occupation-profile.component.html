@@ -1,0 +1,78 @@
+<ng-container *ngIf="{
+                        occupationProfileModel: occupationProfileModel$ | async,
+                        deviceCharacteristics:deviceCharacteristics$ | async
+                      } as dataOwner">
+
+  <section class="grid-y grid-margin-y"
+           *ngIf="dataOwner.occupationProfileModel">
+
+
+    <!-- BACK BUTTON -->
+    <div class="cell">
+      <gmu-back-button></gmu-back-button>
+    </div>
+
+
+    <!-- PROFILE VIEW -->
+    <div class="cell">
+      <gmu-occupation-profile-view [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-occupation-profile-view>
+    </div>
+
+
+    <!-- HEADER: TOP SKILLS GAINED IN THIS MAJOR -->
+    <div class="cell">
+      <gmu-section-header *ngIf="dataOwner.deviceCharacteristics?.isGreaterThanSmall"
+                          [title]="'Skills'"
+                          [subTitle]="'needed for this occupation'"></gmu-section-header>
+    </div>
+
+    <!-- TOP SKILLS -->
+    <div class="cell">
+      <gmu-roadmap-small *ngIf="dataOwner.deviceCharacteristics?.isLessThanMedium"
+                         [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-roadmap-small>
+
+      <gmu-roadmap-medium *ngIf="dataOwner.deviceCharacteristics?.isGreaterThanSmall"
+                          [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-roadmap-medium>
+
+    </div>
+
+
+    <!-- WHAT THEY DO -->
+    <div class="cell">
+      <gmu-occupation-what-they-do [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-occupation-what-they-do>
+    </div>
+
+
+    <!-- Connect With Coach CTA -->
+    <div class="cell">
+
+      <section class="grid-x connect-with-coach-grid">
+
+        <div class="cell auto show-for-medium">
+          <p class="message__label message__label"> {{description}} </p>
+          <p class="message__label message__label--bold"> {{highLightText}} </p>
+        </div>
+
+        <div class="cell auto">
+          <gmu-connect-with-coach></gmu-connect-with-coach>
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- OCCUPATION HOSTSPOTS -->
+    <div class="cell">
+      <gmu-occupation-hot-spot [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-occupation-hot-spot>
+    </div>
+
+
+    <!-- AVERAGE SALARIES -->
+    <div class="cell">
+      <gmu-occupation-average-salaries [occupationProfileDetails]="dataOwner.occupationProfileModel"></gmu-occupation-average-salaries>
+    </div>
+
+  </section>
+
+</ng-container>

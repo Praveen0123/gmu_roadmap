@@ -1,0 +1,62 @@
+@import 'common';
+
+:host {
+  display: block;
+
+  @media only screen and (max-width: 480px) {
+    margin-left : rem-calc(-17);
+    margin-right: rem-calc(-17);
+  }
+
+  @include breakpoint(medium) {
+    margin-left : rem-calc(-40);
+    margin-right: rem-calc(-40);
+  }
+}
+
+h3 {
+  &.headerStyle {
+    background    : $header-background 0% 0% no-repeat padding-box;
+    border-top    : rem-calc(3) solid $color-header;
+    color         : $black;
+    font-size     : rem-calc(20);
+    letter-spacing: rem-calc(0);
+    padding       : rem-calc(4) 0;
+    position      : relative;
+    text-align    : center;
+
+    @include breakpoint(small down) {
+      font-size: rem-calc(16);
+    }
+
+  }
+
+
+  span {
+    &.title {
+      display       : inline-block;
+      font-weight   : bold;
+      margin-right  : rem-calc(8);
+      text-transform: uppercase;
+    }
+
+    &.subTitle {
+      display    : inline-block;
+      font-weight: normal;
+    }
+  }
+
+}
+
+.arrow-down {
+  border-left : rem-calc(20) solid transparent;
+  border-right: rem-calc(20) solid transparent;
+  border-top  : rem-calc(10) solid $header-background;
+  position    : absolute;
+  bottom      : rem-calc(-10);
+  left        : 45%;
+
+  @include breakpoint (medium up) {
+    left: 48%;
+  }
+}
